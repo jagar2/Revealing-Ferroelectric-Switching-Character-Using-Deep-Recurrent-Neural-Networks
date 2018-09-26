@@ -5,8 +5,13 @@ import string
 from matplotlib import (pyplot as plt, animation, colors,
                         ticker, path, patches, patheffects)
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-import moviepy as mpy
-from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
+
+try:
+    import moviepy as mpy
+    from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
+except:
+    pass
+
 import glob
 from scipy import ndimage
 from sklearn import (decomposition, preprocessing as pre, cluster, neighbors)
