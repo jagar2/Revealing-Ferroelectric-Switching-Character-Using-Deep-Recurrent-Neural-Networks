@@ -1873,7 +1873,7 @@ def plot_embedding_maps(data, printing, plot_format, folder, verbose=False, lett
         else:
             image = data[:, i].reshape(original_size, original_size)
             scalefactor = 1
-        im = ax[i].imshow(image)
+        im = ax[i].imshow(image, cmap=plot_format['color_map'])
         ax[i].set_yticklabels('')
         ax[i].set_xticklabels('')
 
