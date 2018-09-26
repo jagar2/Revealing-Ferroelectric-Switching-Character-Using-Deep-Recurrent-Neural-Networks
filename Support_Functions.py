@@ -1304,7 +1304,7 @@ def plot_NMF_maps(voltage, nmf,
             set_axis_aspect(ax)
 
 
-    plt.tight_layout(pad=2)
+    plt.tight_layout(pad=0)
 
     savefig(folder + '/nmf_' + signal_info['symbol'] , printing)
 
