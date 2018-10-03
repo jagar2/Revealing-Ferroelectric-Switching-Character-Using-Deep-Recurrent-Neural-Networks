@@ -12,3 +12,5 @@ https://drive.google.com/open?id=1QomnSPBxn5bFWJl2KB0ReZaj-oIqGWRg
 
 Training data
 https://drive.google.com/open?id=1qE-HjDs3isYN7BcVvsChxcV6JRj1JS0v
+
+[![DOI](https://zenodo.org/badge/124429041.svg)](https://zenodo.org/badge/latestdoi/124429041)
