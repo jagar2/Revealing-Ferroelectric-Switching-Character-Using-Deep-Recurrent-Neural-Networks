@@ -10,6 +10,7 @@ import zipfile
 import shutil
 import os.path
 import os
+import numpy as np
 
 
 def reporthook(count, block_size, total_size):
@@ -131,7 +132,7 @@ def download_and_unzip(filename, url, save_path):
             print('Using files already downloaded')
         elif download_data:
             print('downloading data')
-            io_transfer.download_file(url, filename)
+            download_file(url, filename)
         elif os.path.isfile(filename):
             print('Using zip file already available')
         else:
@@ -139,4 +140,4 @@ def download_and_unzip(filename, url, save_path):
 
         if os.path.isfile(filename):
             print(f'extracting {filename} to {save_path}')
-            io_transfer.unzip(filename, save_path)
+            unzip(filename, save_path)
