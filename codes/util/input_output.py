@@ -127,8 +127,8 @@ def download_and_unzip(filename, url, save_path):
            place where the data is saved
 
     """
-    if np.int(io_transfer.get_size(save_path) / 1e9) < 1:
-        if np.int(io_transfer.get_size(save_path) / 1e9) > 1:
+    if np.int(get_size(save_path) / 1e9) < 1:
+        if np.int(get_size(save_path) / 1e9) > 1:
             print('Using files already downloaded')
         elif download_data:
             print('downloading data')
