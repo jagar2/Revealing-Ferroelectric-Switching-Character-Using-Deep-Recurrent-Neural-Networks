@@ -110,3 +110,33 @@ def get_size(start_path='.'):
             total_size += os.path.getsize(fp)
     return total_size
 
+def download_and_unzip(filename, url, save_path):
+    """
+
+        Function that computes the size of a folder
+
+       Parameters
+       ----------
+
+       filename : string
+           filename to save the zip file
+        url : string
+           url where the file is located
+        save_path : string
+           place where the data is saved
+
+    """
+    if np.int(io_transfer.get_size(save_path) / 1e9) < 1:
+        if np.int(io_transfer.get_size(save_path) / 1e9) > 1:
+            print('Using files already downloaded')
+        elif download_data:
+            print('downloading data')
+            io_transfer.download_file(url, filename)
+        elif os.path.isfile(filename):
+            print('Using zip file already available')
+        else:
+            pass
+
+        if os.path.isfile(filename):
+            print(f'extracting {filename} to {save_path}')
+            io_transfer.unzip(filename, save_path)
