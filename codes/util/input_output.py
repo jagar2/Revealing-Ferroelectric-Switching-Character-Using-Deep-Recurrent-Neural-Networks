@@ -111,7 +111,7 @@ def get_size(start_path='.'):
             total_size += os.path.getsize(fp)
     return total_size
 
-def download_and_unzip(filename, url, save_path):
+def download_and_unzip(filename, url, save_path, download_data):
     """
 
         Function that computes the size of a folder
@@ -125,6 +125,8 @@ def download_and_unzip(filename, url, save_path):
            url where the file is located
         save_path : string
            place where the data is saved
+        download_data : bool
+           sets if to download the data
 
     """
     if np.int(get_size(save_path) / 1e9) < 1:
