@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03f4350d-2e45-436b-8515-07fd47db2c63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Revealing Ferroelectric Switching Character Using Deep Recurrent Neural Networks-Collaboratory.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../Revealing Ferroelectric Switching Character Using Deep Recurrent Neural Networks-Collaboratory.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="03f4350d-2e45-436b-8515-07fd47db2c63" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util/input_output.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1920">
@@ -93,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/file.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -298,6 +296,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util/input_output.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
@@ -305,13 +310,6 @@
           <folding>
             <element signature="e#69#79#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
         </state>
       </provider>
     </entry>
