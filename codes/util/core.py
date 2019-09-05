@@ -136,7 +136,11 @@ def set_axis_aspect(ax, ratio=1):
     ax.set_aspect(abs((xright-xleft)/(ybottom-ytop))*ratio)
 
 
-def colorbar(axes, plot, location='right', size=10, pad=0.05, num_format='%.1e', ticks=True):
+def colorbar(axes, plot,
+             location='right', size=10,
+             pad=0.05, num_format='%.1e',
+             ticks = True,
+             label = False):
     """
     Adds a colorbar to a imageplot
 
@@ -154,6 +158,8 @@ def colorbar(axes, plot, location='right', size=10, pad=0.05, num_format='%.1e',
         gap between colorbar and plot
     num_format : str, optional
         string format for the labels on colorbar
+    label : str, optional
+        sets the label for the axis
     """
 
     # Adds the scalebar
@@ -163,6 +169,9 @@ def colorbar(axes, plot, location='right', size=10, pad=0.05, num_format='%.1e',
 
     if not ticks:
         cbar.set_ticks([])
+
+    if isinstance(label, str):
+        cbar.set_label(label, rotation=270, labelpad= 15)
 
 
 def find_nearest(array, value, averaging_number):

@@ -99,7 +99,7 @@ def cleaned_data(data, i, printing, folder='./'):
             printing)
 
 
-def pfm_w_line_trace(signals, imported, printing, folder, name='/PFM_image'):
+def pfm_w_line_trace(signals, imported, printing, folder, name='/PFM_image', colorbar_shown = False):
     """
     Plots PFM image with line trace
 
@@ -115,6 +115,9 @@ def pfm_w_line_trace(signals, imported, printing, folder, name='/PFM_image'):
         folder to save the image
     name : string
         filename to save the image
+    colorbar_shown : bool
+        shows the colorbar
+
 
     """
 
@@ -187,10 +190,15 @@ def pfm_w_line_trace(signals, imported, printing, folder, name='/PFM_image'):
 
     plt.tight_layout()
 
+    if colorbar_shown:
+        fig.subplots_adjust(right=0.8)
+        cbar_ax = fig.add_axes([0.85, 0.15, 0.05, 0.7])
+        fig.colorbar(im, cax=cbar_ax,ticks = None)
+
     savefig(folder + name, printing)
 
 
-def rsm(data, printing, folder, name='/002_RSM'):
+def rsm(data, printing, folder, plot_format, name='/002_RSM'):
     """
     Plots RSM image
 
@@ -210,6 +218,8 @@ def rsm(data, printing, folder, name='/002_RSM'):
         folder to save the image
     name : string
         filename to save the image
+    plot_format : dict
+        list of settings for the plot format
 
     """
 
@@ -218,10 +228,10 @@ def rsm(data, printing, folder, name='/002_RSM'):
     ax1 = fig.add_subplot(111)
 
     # Plots the graph
-    Plt1 = ax1.imshow(np.flipud(np.log(data['data']['vq'])), cmap='viridis')
+    im = ax1.imshow(np.flipud(np.log(data['data']['vq'])), cmap='viridis')
 
     # Formats the graph
-    Plt1.set_clim([3, 8])
+    im.set_clim([3, 8])
     ax1.set_xticks(np.linspace(0, 1000, 9))
     ax1.set_xticklabels(np.linspace(-4, 4, 9))
     ax1.set_yticks(np.linspace(777.77777 / 5, 777.7777777777778, 4))
@@ -230,6 +240,9 @@ def rsm(data, printing, folder, name='/002_RSM'):
     ax1.set_xlabel('Q${_x}$ (1/${\AA}$)')
     ax1.set_ylabel('Q${_y}$ (1/${\AA}$)')
     ax1.set_facecolor([0.26700401,  0.00487433,  0.32941519])
+
+    if plot_format['color_bars']:
+        colorbar(ax1,im, label = 'Counts', num_format='%0.0f')
 
     # Saves the figure
     savefig(folder + name, printing)
@@ -781,7 +794,7 @@ def pca_results(pca, data, signal_info, printing, folder, plot_format, signal,
                     i - mod - ((i // mod) // 2) * mod], 'k')
 
             # Formats and labels the axes
-            ax.set_xlabel('Voltage')
+            ax.set_xlabel('Voltage (V)')
             ax.set_ylabel(signal_info[signal]['units'])
             ax.set_yticklabels('')
             ax.set_ylim([min_, max_])
@@ -874,7 +887,7 @@ def NMF(voltage, nmf,
 
             ax.plot(voltage, W[:, order[k]], 'k')
 
-            ax.set_xlabel('Voltage')
+            ax.set_xlabel('Voltage (V)')
             ax.set_ylim([min_, max_])
             ax.set_ylabel(signal_info['units'])
             ax.set_yticklabels('')
@@ -1155,7 +1168,7 @@ def training_loss(model_folder, data,
         data['normalized'][signal][i])).squeeze(), 'r')
 
     # sets the axis titles
-    ax[1].set_xlabel('Voltage')
+    ax[1].set_xlabel('Voltage (V)')
     ax[1].set_ylabel(signal_info[signal]['units'])
     ax[1].set_yticks(signal_info[signal]['y_tick'])
     ax[1].set_ylim([-2, 2])
@@ -1169,7 +1182,7 @@ def training_loss(model_folder, data,
                model.predict(np.atleast_3d(data['normalized']['val_' + signal][i])).squeeze(), 'r')
 
     # sets the axis titles
-    ax[2].set_xlabel('Voltage')
+    ax[2].set_xlabel('Voltage (V)')
     ax[2].set_yticks(signal_info[signal]['y_tick'])
     ax[2].set_ylim([-2, 2])
 
