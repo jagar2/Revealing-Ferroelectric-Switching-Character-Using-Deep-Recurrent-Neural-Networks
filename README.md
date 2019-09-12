@@ -11,6 +11,8 @@ https://zenodo.org/record/1482091/files/Phase_field.zip?download=1
 Training data
 https://zenodo.org/record/1482091/files/Trained_models.zip?download=1
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1482091.svg)](https://doi.org/10.5281/zenodo.1482091)
+
 
 1. Go to https://colab.research.google.com/
 2. Select load from GitHub: https://github.com/jagar2/Revealing-Ferroelectric-Switching-Character-Using-Deep-Recurrent-Neural-Networks.git
