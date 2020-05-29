@@ -178,14 +178,14 @@ def scalebar(axes, image_size, scale_size, units='nm', loc='br'):
     # gets the size of the image
     x_lim, y_lim = axes.get_xlim(), axes.get_ylim()
     x_size, y_size = np.abs(
-        np.floor(x_lim[1] - x_lim[0])), np.abs(np.floor(y_lim[1] - y_lim[0]))
+        np.int(np.floor(x_lim[1] - x_lim[0]))), np.abs(np.int(np.floor(y_lim[1] - y_lim[0])))
     # computes the fraction of the image for the scalebar
     fract = scale_size / image_size
 
     x_point = np.linspace(x_lim[0], x_lim[1],
-                          np.floor(image_size))
+                          np.int(np.floor(image_size)))
     y_point = np.linspace(y_lim[0], y_lim[1],
-                          np.floor(image_size))
+                          np.int(np.floor(image_size)))
 
     # sets the location of the scalebar
     if loc == 'br':
