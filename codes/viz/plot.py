@@ -416,7 +416,7 @@ def band_excitation_movie(data, signals_clim,
     # makes a copy of the voltage and reshapes it
     voltage = np.copy(data['data']['Voltagedata_mixed'])  # type: ndarray
     voltage_steps = voltage.shape[0]
-    voltage = roll_and_append(voltage)[::-1]
+    voltage = roll_and_append(voltage)
     voltage = np.append(voltage, voltage)
 
     # Cycles around each loop
