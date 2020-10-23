@@ -5,7 +5,7 @@ Created on Tue Oct 09 16:39:00 2018
 
 import keras
 from keras.models import Sequential, Input, Model
-from keras.layers import (Dense, Conv1D, Convolution2D, GRU, LSTM, Recurrent, Bidirectional, TimeDistributed,
+from keras.layers import (Dense, Conv1D, Convolution2D, GRU, LSTM, Bidirectional, TimeDistributed,
                           Dropout, Flatten, RepeatVector, Reshape, MaxPooling1D, UpSampling1D, BatchNormalization)
 from keras.optimizers import Adam
 from keras.regularizers import l1
